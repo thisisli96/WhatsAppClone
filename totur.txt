@@ -3,3 +3,20 @@ yang harus di kuasai
 -ArrayLists
 -objects
 
+tujuan atau hasil :
+-login with phone number
+-simple text chat
+-send images
+-group chat
+-assorted features
+
+
+step :
+1. android studio
+2. creating New Project
+3. Connecting a Firebase Project
+
+Phone Number Authentication
+1. introduction
+2. enabling phone Number Login
+3. Importing the Needed Libraries
