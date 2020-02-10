@@ -20,3 +20,6 @@ Phone Number Authentication
 1. introduction
 2. enabling phone Number Login
 3. Importing the Needed Libraries
+4. Login Layout
+5. make a phone number Verificition
+6. Handling the Callbacks
