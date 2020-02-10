@@ -1,0 +1,5 @@
+yang harus di kuasai 
+-loops
+-ArrayLists
+-objects
+
