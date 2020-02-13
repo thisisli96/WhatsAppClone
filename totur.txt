@@ -3,6 +3,8 @@ yang harus di kuasai
 -ArrayLists
 -objects
 
+
+
 tujuan atau hasil :
 -login with phone number
 -simple text chat
@@ -23,3 +25,6 @@ Phone Number Authentication
 4. Login Layout
 5. make a phone number Verificition
 6. Handling the Callbacks
+7. Signln Function
+8. SignOut Function
+9. verifying the Sent Code

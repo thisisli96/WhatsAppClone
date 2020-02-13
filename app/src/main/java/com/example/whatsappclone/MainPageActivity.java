@@ -20,7 +20,14 @@ public class MainPageActivity extends AppCompatActivity {
 
         // step 8 NOTED
         Button mlogOut = findViewById(R.id.logOut); // untuk kembali ke ke menu main Activity
+        Button mFindUser = findViewById(R.id.findUser);
 
+        mFindUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), FindUserActivity.class));
+            }
+        });
         mlogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

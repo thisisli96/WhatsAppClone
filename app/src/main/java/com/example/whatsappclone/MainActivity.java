@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText mPhoneNumber, mcode ;
     private Button mSend;
 
+   // private String mVerificationId;
+    String mVerificationId;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
     @Override
@@ -43,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         mSend.setOnClickListener(new View.OnClickListener() { // NOTED step 5 started
             @Override
             public void onClick(View v) {
+                if (mVerificationId != null)
+                    verifyPhoneNumberWithCode(); // cari tahu
+                else
                 startPhoneNumberVerification();
             }
         });
@@ -57,9 +63,32 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onVerificationFailed(FirebaseException e) { } // and the message not same and the user input something wrong , this method will be call
+
+
+            // step 9
+            @Override
+            public void onCodeSent(String mverificationId, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                super.onCodeSent(mverificationId, forceResendingToken);
+
+                mVerificationId = mverificationId;
+                mSend.setText("verity code");
+                Log.i("aadasdada", mVerificationId);
+            }
         };
 
     }
+
+
+
+
+
+
+    // next step 9
+    private void verifyPhoneNumberWithCode() {
+        PhoneAuthCredential credential  = PhoneAuthProvider.getCredential(mVerificationId, mcode.getText().toString());
+        signInWithPhoneAuthCredential(credential); // cari tahu
+    }
+
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential phoneAuthCredential) {
         FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
