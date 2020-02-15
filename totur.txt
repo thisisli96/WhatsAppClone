@@ -28,3 +28,10 @@ Phone Number Authentication
 7. Signln Function
 8. SignOut Function
 9. verifying the Sent Code
+
+
+userlist 
+3. initializing the RecyclerView
+4.userObject
+5.UserListAdapter
+6.FindUser's Item Layout
