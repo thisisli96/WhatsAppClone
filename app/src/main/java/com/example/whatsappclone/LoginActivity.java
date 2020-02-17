@@ -102,29 +102,30 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){ //3.Database Structure (checking if contact is also a user)
-                    final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // mengambil data dari Authentication bukan didatabase
-                    if (user != null) {
-                        final DatabaseReference mUserDB = FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid());
-                        mUserDB.addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                  if (!dataSnapshot.exists()){
-                                      Map<String, Object> userMap = new HashMap<>();
-                                      userMap.put("phone", user.getPhoneNumber());
-                                      userMap.put("name", user.getDisplayName());
-                                      mUserDB.updateChildren(userMap);
-                                  }
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                            }
-                        });
-                    }
+//                    final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // mengambil data dari Authentication bukan didatabase
+//                    if (user != null) {
+//                        final DatabaseReference mUserDB = FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid());
+//                        mUserDB.addListenerForSingleValueEvent(new ValueEventListener() {
+//                            @Override
+//                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                                  if (!dataSnapshot.exists()){
+//                                      Map<String, Object> userMap = new HashMap<>();
+//                                      userMap.put("phone", user.getPhoneNumber());
+//                                      userMap.put("name", user.getPhoneNumber());
+//                                      mUserDB.updateChildren(userMap);
+//                                  }
+//                                  userIsLoggedIn();
+//                            }
+//
+//                            @Override
+//                            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                            }
+//                        });
+//                    }
                 }
 
-                   // userIsLoggedIn();
+                   userIsLoggedIn();
 
             }
         });

@@ -34,4 +34,19 @@ userlist
 3. initializing the RecyclerView
 4.userObject
 5.UserListAdapter
-6.FindUser's Item Layout
+6.FindUser's Item Layout(item_user)
+
+getting contact list 58:12 
+1.introduction 
+2.getting the Needed Permissions(membuat permision in mainpageActivity untuk dapat contact list) 
+3.getting contatcs informasion // source to find contact list
+4.compile & test
+
+checking if contact is also a user
+1. indroduction
+2. saving user data to the database // uid penggunaka di firebase, itu artinya data telah terdaftar di datatersebut
+3. Database Structure 
+4. checking What Contacts Use OUR APP
+5. Getting The iso
+6. converting iso into a phone indicator
+7. normalizing the contacts Number
